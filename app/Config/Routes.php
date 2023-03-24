@@ -30,7 +30,33 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->get('/data', 'DataTake::index');
 
+$routes->group(
+    'api',
+    [
+        'namespace' => 'App\Controllers'
+    ],
+    function (\CodeIgniter\Router\RouteCollection $routes) {
+        //restaurant APIs
+        $routes->resource("restaurant", [
+            'controller' => 'RestaurantController',
+            'only' => ['index', 'show'],
+        ]);
+
+        //category APIs
+        $routes->resource("category", [
+            'controller' => 'CategoryController',
+            'only' => ['index', 'show'],
+        ]);
+
+        //reservation APIs
+        $routes->resource("reservation", [
+            'controller' => 'ReservationController',
+            'only' => ['index', 'show','create','update','delete'],
+        ]);
+    }
+);
 /*
  * --------------------------------------------------------------------
  * Additional Routing

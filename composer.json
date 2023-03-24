@@ -6,10 +6,12 @@
     "license": "MIT",
     "require": {
         "php": "^7.4 || ^8.0",
-        "codeigniter4/framework": "^4.0"
+        "codeigniter4/framework": "^4.0",
+        "friendsofphp/php-cs-fixer": "^3.15",
+        "mbezhanov/faker-provider-collection": "^2.0",
+        "sdpmlab/anser-action": "^0.3.5"
     },
     "require-dev": {
-        "fakerphp/faker": "^1.9",
         "mikey179/vfsstream": "^1.6",
         "phpunit/phpunit": "^9.1"
     },
